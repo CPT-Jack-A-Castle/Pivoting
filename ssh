@@ -1,11 +1,21 @@
 ==============================================================================
-[+] Pivoting SSH
+[+] Use SSH
 ==============================================================================
-# Pivoting SSH
+# Simple Use
+ssh root@10.10.10.10 -p 22
 
+# Use with private key
+chmod 600 key.ssh
+ssh -i key.ssh root@10.10.10.10 -p 22
+
+# Pivoting SSH
 ssh -D 127.0.0.1:9050 -f -N root@10.10.10.10 -22
-proxychains << command Linux>>
+
+
+# Example consume by port 9050
+proxychains << command Linux >>
 proxychains ping 10.10.10.20
+proxychains nmap -sC -sV  10.10.10.20 -Pn
 
 # Port Forwarding
 ssh -L 8443:127.0.0.1:8443 Nadine@10.10.10.184  
