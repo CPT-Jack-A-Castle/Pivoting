@@ -11,6 +11,8 @@ ssh -i key.ssh root@10.10.10.10 -p 22
 # Pivoting SSH
 ssh -D 127.0.0.1:9050 -f -N root@10.10.10.10 -22
 
+# Exploits by Shell and Burp
+export http_proxy=http://127.0.0.1:8080    
 
 # Example consume by port 9050
 proxychains << command Linux >>
